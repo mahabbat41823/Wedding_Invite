@@ -51,23 +51,49 @@
   .pick.its{background:#e4efec;color:#4d7d72}   /* 잇츠카드 */
 
   /* ===== Vendor cards ===== */
-  .cards{display:grid;gap:18px;margin-top:8px}
-  .vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
-  .vcard .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-  .vcard .tag{font-size:.8rem;color:var(--ink-soft);font-weight:300}
-  .vcard h3{font-family:'Gowun Batang',serif;font-size:1.25rem;font-weight:700}
-  .grid2{display:grid;grid-template-columns:120px 1fr;gap:8px 16px;margin-top:14px;font-size:.9rem}
-  .grid2 dt{color:var(--rose);font-weight:500}
-  .grid2 dd{color:var(--ink)}
-  .grid2 dd .sub{color:var(--ink-soft);font-weight:300;font-size:.85rem}
-  .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
-  .pros-cons div{border-radius:12px;padding:12px 14px;font-size:.86rem;line-height:1.55}
-  .pros{background:var(--yes-bg)}
-  .pros b{color:var(--yes)}
-  .cons{background:#f7eeea}
-  .cons b{color:var(--rose)}
-  .pros ul,.cons ul{margin:6px 0 0;padding-left:16px}
-  .pros li,.cons li{margin-bottom:3px}
+  .vendor{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:28px 30px;margin-top:20px;
+  }
+  .vendor-top{display:flex;align-items:center;flex-wrap:wrap;gap:12px 16px;margin-bottom:6px}
+  .vendor-top h3{font-family:'Gowun Batang',serif;font-size:1.45rem;font-weight:700}
+  .badge{
+    font-size:.82rem;font-weight:700;padding:5px 12px;border-radius:999px;
+    background:var(--blush);color:var(--rose);
+  }
+  .badge.free{background:var(--yes-bg);color:var(--yes)}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 4px}
+  .tag{font-size:.78rem;padding:4px 11px;border-radius:7px;background:var(--paper);border:1px solid var(--line-soft);color:var(--ink-soft)}
+  .oneliner{font-size:.92rem;color:var(--ink-soft);font-weight:300;margin-top:10px;font-style:italic}
+
+  .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+  .pc h4{font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px;font-weight:700}
+  .pc.pros h4{color:var(--yes)}
+  .pc.cons h4{color:var(--no)}
+  .pc ul{list-style:none}
+  .pc li{position:relative;padding-left:20px;margin-bottom:7px;font-size:.9rem}
+  .pc.pros li::before{content:"+";position:absolute;left:2px;color:var(--yes);font-weight:700}
+  .pc.cons li::before{content:"–";position:absolute;left:4px;color:var(--no);font-weight:700}
+
+  details.full{margin-top:20px;border-top:1px solid var(--line-soft);padding-top:14px}
+  details.full summary{
+    cursor:pointer;font-size:.86rem;font-weight:500;color:var(--rose);
+    list-style:none;display:flex;align-items:center;gap:7px;
+  }
+  details.full summary::-webkit-details-marker{display:none}
+  details.full summary::before{content:"＋";font-weight:700}
+  details.full[open] summary::before{content:"－"}
+  .opt-groups{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px 28px}
+  .opt-groups dt{font-weight:700;font-size:.85rem;margin-top:10px;color:var(--ink)}
+  .opt-groups dd{font-size:.86rem;color:var(--ink-soft);font-weight:300;margin-bottom:2px;padding-left:2px}
+
+   /* Pick note */
+  .picks{background:var(--blush);border-radius:16px;padding:26px 30px;margin-top:24px}
+  .picks h3{font-family:'Gowun Batang',serif;font-size:1.2rem;margin-bottom:14px}
+  .picks ul{list-style:none}
+  .picks li{padding:7px 0;border-bottom:1px solid rgba(168,93,82,.15);font-size:.92rem}
+  .picks li:last-child{border-bottom:none}
+  .picks b{color:var(--rose)}
 
   /* guide table */
   .guide td .pick{margin:0}
@@ -101,19 +127,19 @@
       <thead>
         <tr>
           <th>업체</th>
-          <th>1매당 가격</th>
+          <th>1매당 가격(1단)</th>
           <th>최소 주문</th>
-          <th>총 가격 (최소 인쇄 시)</th>
+          <th>총 가격(1단, 200매 기준)</th>
           <th>디자인 수</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><span class="pick biz">비즈하우스</span></td>
-          <td class="num">약 100~400원<div class="muted">업계 최저가 수준</div></td>
-          <td class="num">소량 가능<div class="muted">25장 주문 후기 다수</div></td>
-          <td class="warn-cell">확인 필요</td>
-          <td class="num">템플릿 다수<div class="muted">+ 완전 커스텀</div></td>
+          <td class="num">약 90원 (최소 200매 기준<div class="muted">업계 최저가 수준</div></td>
+          <td class="num">소량 가능<div class="muted">8장 부터 가능 (1매당 350원)</div></td>
+          <td class="warn-cell">20,500원 (10% 할인받으면 18,450원)</td>
+          <td class="num">23,000+ 이상<div class="muted">+ 파일 업로드/디자인 의뢰</div></td>
         </tr>
         <tr>
           <td><span class="pick bar">바른손카드</span></td>
@@ -148,23 +174,46 @@
   </div>
 
   <!-- ===== 02 업체별 상세 ===== -->
-  <div class="section-head"><span class="no">02</span><h2>업체별 상세</h2></div>
-  <div class="cards">
+  <div class="section-head">
+    <span class="no">02</span>
+    <h2>업체별 상세</h2>
+    <span class="hint">‘전체 옵션 보기’를 누르면 기능 목록이 펼쳐져요</span>
+  </div>
 
     <!-- 비즈하우스 -->
-    <div class="vcard">
-      <div class="top"><span class="pick biz">비즈하우스</span><span class="tag">가성비 DIY · 특이 소재의 끝판왕</span></div>
-      <dl class="grid2">
-        <dt>특색 디자인</dt><dd>트레싱지(반투명) 봉투, <b>초콜릿 청첩장</b>, 다양한 용지(랑데뷰·펄지·린넨커버·아트지)</dd>
-        <dt>봉투+스티커</dt><dd>O — 봉투·스티커·실링 왁스 스티커·트레싱지 봉투 <span class="sub">(대부분 별도 옵션)</span></dd>
-        <dt>세트 가격</dt><dd><span class="warn-cell">확인 필요</span></dd>
-        <dt>식권</dt><dd>O — 식권 인쇄(용지·라운딩 선택) <span class="sub">동시구매 특혜: 확인 필요</span></dd>
-        <dt>부가기능</dt><dd>웨딩포스터 · 어깨띠 · 현수막 · 포토테이블 등</dd>
-      </dl>
-      <div class="pros-cons">
-        <div class="pros"><b>장점</b><ul><li>업계 최저가 · 빠른 배송</li><li>웹 에디터가 쉬워 초보도 제작 가능</li><li>소량 주문·특이 용지/소재 다양</li></ul></div>
-        <div class="cons"><b>단점</b><ul><li>업체 검수 없음 — 오타 직접 확인</li><li>봉투 넣기·스티커 붙이기 모두 수작업</li><li>무코팅 용지는 번짐 가능 · 약도 직접 삽입</li></ul></div>
+    <div class="vendor">
+      <div class="vendor-top">
+        <h3></h3>비즈하우스</h3>
+        <span class="tag">가성비 DIY · 특이 소재의 끝판왕</span>
       </div>
+      <div class="pros-cons">
+        <div class="pc pros">
+          <h4>장점</h4>
+          <ul>
+            <li>업계 최저가 · 빠른 배송</li>
+            <li>웹 에디터가 쉬워 초보도 제작 가능</li>
+            <li>소량 주문·특이 용지/소재 다양</li>
+            <li>특색 디자인(반투명, 초콜릿 청첩장)</li>
+            <li>청첩장 세트(청첩장+봉투+스티커 - 최소 50매 49,000원) </li>
+            <li>구매 시 살롱드레터 할인(43%)</li>
+          </ul>
+        </div>
+        <div class="pc cons">
+          <h4>단점</h4>
+          <ul>
+            <li>업체 검수 없음 — 오타 직접 확인</li>
+            <li>봉투 넣기·스티커 붙이기 모두 수작업</li>
+            <li>무코팅 용지는 번짐 가능 · 약도 직접 삽입</li>
+          </ul>
+        </div>
+        <details class="full">
+          <summary>전체 옵션 보기</summary>
+          <dl class="opt-groups">
+            <dt>특색 디자인</dt><dd> 트레싱지(반투명), 초콜릿 청첩장, 글로시, 다양한 용지(랑데뷰·펄지·린넨커버·아트지)</dd>
+            <dt>봉투+스티커</dt><dd>봉투·스티커·실링 왁스 스티커·트레싱지 봉투<span class="sub">(대부분 개별구매 옵션)</span></dd>
+            <dt>식권</dt><dd>53종 디자인 + 용지·라운딩 선택 가능</dd>
+            <dt>부가기능</dt><dd>웨딩포스터 · 어깨띠 · 현수막 · 포토테이블 등</dd>
+      </dl>
     </div>
 
     <!-- 바른손카드 -->
