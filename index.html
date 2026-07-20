@@ -113,6 +113,19 @@
     .sc-main{grid-template-columns:1fr}
     .sc-photos{grid-template-columns:1fr 1fr;max-width:300px}
   }
+  /* 사진 클릭 시 확대 커서 */
+  img.shot,img.thumb{cursor:zoom-in}
+
+  /* 라이트박스(팝업) */
+  #lightbox{position:fixed;inset:0;background:rgba(20,16,14,.85);display:none;align-items:center;justify-content:center;z-index:1000;overscroll-behavior:contain}
+  #lightbox.open{display:flex}
+  #lb-stage{overflow:hidden;width:100%;height:100%;display:flex;align-items:center;justify-content:center;touch-action:none}
+  #lb-img{max-width:92vw;max-height:88vh;transform-origin:center center;will-change:transform;user-select:none;-webkit-user-drag:none;border-radius:4px}
+  #lb-img.grab{cursor:grab}
+  #lb-img.grabbing{cursor:grabbing}
+  #lb-bar{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001}
+  #lb-bar button{width:44px;height:44px;border:none;border-radius:10px;background:rgba(255,255,255,.16);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer}
+  #lb-bar button:hover{background:rgba(255,255,255,.3)}
 </style>
 </head>
 <body>
@@ -184,7 +197,7 @@
 
   <!-- 비즈하우스 -->
   <div class="summary-card" id="biz" style="--accent:#b58a3c">
-    <div class="sc-name"><a href= "https://www.bizhows.com/ko">비즈하우스</a></div>
+    <div class="sc-name"><a href= "https://www.bizhows.com/ko/v/category?mock=product_list_800&categoryName=%EC%B2%AD%EC%B2%A9%EC%9E%A5&slideName=&from=megamenu_gnb">비즈하우스</a></div>
     <div class="sc-sub">미리캔버스 연동 + 커스텀 제작 끝판왕</div>
     <hr class="sc-rule">
     <div class="sc-main">
@@ -194,8 +207,8 @@
         <div class="sc-block"><div class="lbl">디자인 방식</div><div class="val">미리캔버스 → 비즈하우스 연동 주문<br>자체 에디터 + 파일 업로드</div></div>
       </div>
       <div class="sc-photos">
-        <div class="shot", src=""+>사진 1<br>추가</div>
-        <div class="shot">사진 2<br>추가</div>
+        <img class="thumb" src="assets/bizhows_photo_1.png" alt="비즈하우스 디자인 사진 1 (앞면)">
+        <img class="thumb" src="assets/bizhows_photo_2.png" alt="비즈하우스 디자인 사진 2 (뒷면)">
       </div>
     </div>
     <div class="sc-pros"><h4>✅ 장점</h4><ul>
@@ -208,7 +221,10 @@
       <span class="chip">봉투 <b>92</b></span><span class="chip">스티커 <b>103</b></span>
       <span class="chip">기성청첩장 <b>39</b></span><span class="chip">식권 <b>32</b></span>
     </div>
-    <div class="sc-gallery"><div class="thumb">상품<br>사진 1</div><div class="thumb">상품<br>사진 2</div><div class="thumb">상품<br>사진 3</div><div class="thumb">상품<br>사진 4</div></div>
+    <div class="sc-gallery">
+      <img class="thumb" src="assets/bizhows_photo_3.png" alt="비즈하우스 디자인 사진 3">
+      <img class="thumb" src="assets/bizhows_meal_4.png" alt="비즈하우스 디자인 사진 4">
+    </div>
     <details class="detail"><summary>전체 옵션·가격표 펼쳐보기</summary>
       <div class="grp-title">청첩장 본품</div>
       <div class="scroll"><table class="opt">
@@ -342,11 +358,11 @@
     <div class="sc-updown">
       <div class="sc-pros"><h4>✅ 장점</h4><ul>
         <li>청첩장 전문 1위 · 이용후기 75,000+</li>
-        <li>종이+모바일 연계 혜택 (먼저 주문 시 할인/무료)</li>
-        <li>부가소품 다양 (스탬프·리본·라벨지·프리저브드 액자 등)</li>
+        <li>종이+모바일 연계 혜택 (먼저 주문 시 무료)</li>
+        <li>무제한 전문가 수정 지원</li>
       </ul></div>
       <div class="sc-cons"><h4>❌ 단점</h4><ul>
-        <li>종이 재질 선택 불가 (고급 수입지·엽서형 400g·2단 370g</li>
+        <li>종이 재질 선택 불가 (고급 수입지·엽서형 400g·2단 370g)</li>
         <li>엽서형 청첩장 종류 제한적 (기본 2단)</li>
         <li>많이 본 디자인 (이용자가 많아서)</li>
       </ul></div>
@@ -361,13 +377,25 @@
     </div>
     <details class="detail">
       <summary>전체 옵션·가격표</summary>
-      <div><b>기본 옵션</b>글씨 색깔 · 영어/한글 · 봉투 · 리본 여부 · 모서리(직각/라운드) · 형태(엽서형/2단)</div>
+      <div><b>기본 선택 옵션: </b> 글씨 색깔 · 영어/한글 · 봉투 · 리본 여부 · 모서리(직각/라운드) · 형태(엽서형/2단)</div>
+      <div><b>10부 이상 무료 혜택: </b> 약도 드로잉 · 봉투 · 실버 스티커 · 모바일 청첩장</div>
+      <div><b>100부 이상 무료 (택 1): </b> 식전영상 · 모바일 웨딩 영상 · 웨딩 스탬프 · 실링 스티커 · 실링 패키지</div>
+      <div><b>제작 소요: </b> 3-5일 (+ 당일 인쇄 초특급 제작 서비스: 24시간 내)</div>
       <div class="scroll"><table class="opt">
-        <thead><tr><th>형태</th><th>특징</th><th>1매당(200매 기준)</th><th>최소 수량</th><th>총 가격(200매 기준)</th><th>비고</th></tr></thead>
+        <thead><tr><th>형태</th><th>1매당(200매 기준)</th><th>최소 수량</th><th>총 가격(200매 기본 옵션 기준)</th><th>비고</th></tr></thead>
         <tbody>
-          <tr><td class="opt-name">1단 (엽서형)</td><td>포토/심플/러블리/셀픽</td><td>624원</td><td>10부</td><td>124,800원~</td><td></td></tr>
-          <tr><td class="opt-name">봉투 / 스티커</td><td>카드봉투·실링·왁스·디자인스티커·라벨지</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td>—</td></tr>
-          <tr><td class="opt-name">부가물</td><td>웨딩스탬프·리본·프리저브드 액자·예식순서지·사진보정</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td>—</td></tr>
+          <tr><td class="opt-name">1단 (엽서형)</td><td>624원~</td><td>10부</td><td>124,800원~</td><td></td></tr>
+          <tr><td class="opt-name">2단 </td><td>780원~</td><td>10부</td><td>156,000원~</td><td>—</td></tr>
+          <tr><td class="opt-name">부가물</td><td>확인 필요</td><td>확인 필요</td><td>확인 필요</td><td>—</td></tr>
+        </tbody></table></div>
+      <div class="scroll"><table class="opt">
+        <thead><tr><th>추가 옵션</th><th>특징</th><th>추가 금액</th><th>200매 구매시 총 추가 요금</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td class="opt-name">봉투</td><td>색 변경·트레이싱지·내지변경</td><td>1,000-2,000원</td><td>1,000-2,000원</td><td>트레이싱지만 10부 1,000원</td></tr>
+          <tr><td class="opt-name">리본</td><td>청첩장리본</td><td>15,000-20,000원 (50개)<br>3,000원 (롤/22개)</td><td>60,000-80,000원<br>30,000원</td><td>—</td></tr>
+          <tr><td class="opt-name">봉투 스티커</td><td>컬러풀 · 단일 색</td><td>2,500-3,000원 (50개)</td><td>10,000-12,000원</td><td>—</td></tr>
+          <tr><td class="opt-name">실링 왁스 스티커</td><td>왁스 스티커</td><td>10,000원 (25개)</td><td>40,000원</td><td>—</td></tr>
+          <tr><td class="opt-name">프리저브드 플라워</td><td>봉투 규격에 맞는 드라이생화</td><td>25,000원 (20개)</td><td>250,000원</td><td>—</td></tr>
         </tbody></table></div>
     </details>
   </div>
@@ -428,5 +456,39 @@
   </footer>
 
 </div>
+  <div id="lightbox" aria-hidden="true">
+    <div id="lb-bar">
+      <button id="lb-zoomout" aria-label="축소">−</button>
+      <button id="lb-zoomin" aria-label="확대">＋</button>
+      <button id="lb-reset" aria-label="원래대로">⟳</button>
+      <button id="lb-close" aria-label="닫기">✕</button>
+    </div>
+    <div id="lb-stage"><img id="lb-img" alt=""></div>
+  </div>
+  <script>
+  (function(){
+    const lb=document.getElementById('lightbox'),stage=document.getElementById('lb-stage'),img=document.getElementById('lb-img');
+    let scale=1,tx=0,ty=0,drag=false,sx=0,sy=0;
+    const apply=()=>{img.style.transform=`translate(${tx}px,${ty}px) scale(${scale})`;img.classList.toggle('grab',scale>1);};
+    const reset=()=>{scale=1;tx=0;ty=0;apply();};
+    const open=(src,alt)=>{img.src=src;img.alt=alt||'';reset();lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';};
+    const close=()=>{lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';img.src='';};
+    const zoom=d=>{scale=Math.min(Math.max(scale+d,1),5);if(scale===1){tx=0;ty=0;}apply();};
+
+    document.querySelectorAll('img.shot,img.thumb').forEach(el=>el.addEventListener('click',()=>open(el.currentSrc||el.src,el.alt)));
+    document.getElementById('lb-close').addEventListener('click',close);
+    document.getElementById('lb-reset').addEventListener('click',reset);
+    document.getElementById('lb-zoomin').addEventListener('click',()=>zoom(.4));
+    document.getElementById('lb-zoomout').addEventListener('click',()=>zoom(-.4));
+    lb.addEventListener('click',e=>{if(e.target===lb||e.target===stage)close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+    stage.addEventListener('wheel',e=>{if(!lb.classList.contains('open'))return;e.preventDefault();zoom(e.deltaY<0?.2:-.2);},{passive:false});
+    img.addEventListener('dblclick',()=>{scale=scale>1?1:2;if(scale===1){tx=0;ty=0;}apply();});
+    img.addEventListener('pointerdown',e=>{if(scale<=1)return;drag=true;img.classList.add('grabbing');sx=e.clientX-tx;sy=e.clientY-ty;img.setPointerCapture(e.pointerId);});
+    img.addEventListener('pointermove',e=>{if(!drag)return;tx=e.clientX-sx;ty=e.clientY-sy;apply();});
+    img.addEventListener('pointerup',()=>{drag=false;img.classList.remove('grabbing');});
+    img.addEventListener('pointercancel',()=>{drag=false;img.classList.remove('grabbing');});
+  })();
+  </script>
 </body>
 </html>
