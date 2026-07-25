@@ -34,6 +34,9 @@
   table.matrix{border-collapse:collapse;width:100%;min-width:720px;font-size:.88rem}
   table.matrix th,table.matrix td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
   table.matrix thead th{background:var(--blush);border-bottom:1px solid var(--line);text-align:center}
+  table.matrix thead th{background:var(--blush);border-bottom:1px solid var(--line);text-align:center;
+                        white-space:normal;      /* 추가: 줄바꿈 허용 */
+                        word-break:keep-all;     /* 추가: 단어(어절) 단위로만 줄바꿈, 음절 단위로 안 끊김 */}
   table.matrix tbody th[scope=row]{font-family:'Gowun Batang',serif;font-weight:700;color:var(--rose);white-space:nowrap;font-size:.86rem}
   table.matrix tbody tr:last-child td,table.matrix tbody tr:last-child th{border-bottom:none}
   .num{font-variant-numeric:tabular-nums}
@@ -148,7 +151,7 @@
         <tr>
           <th>업체</th>
           <th>1매 가격 (200매 기준)</th>
-          <th>최소 주문</th>
+          <th>최소<br>주문</th>
           <th>무료 혜택</th>
           <th>대표 특징</th>
         </tr>
@@ -221,7 +224,7 @@
       </ul></div>
       <div class="sc-cons"><h4>❌ 단점</h4><ul>
         <li>업체 최종 검토 작업 없음 (오타 가능성 多 - 소량 구매 후, 대량 구매 추천)</li>
-        <li>기본 스노우지 선택 시 너무 저렴해 보일 수 있음 (랑데뷰지 추천)</li>
+        <li>기본 스노우지 선택 시 저렴해 보일 수 있음 (랑데뷰지 추천)</li>
         <li>약도 직접 작업 필요</li>
       </ul></div>
     </div>
@@ -231,8 +234,9 @@
       <span class="chip">기성청첩장 <b>39</b></span><span class="chip">식권 <b>32</b></span>
     </div>
     <div class="sc-gallery">
-      <img class="thumb" src="assets/bizhows_photo_3.png" alt="비즈하우스 디자인 사진 3">
-      <img class="thumb" src="assets/bizhows_meal_4.png" alt="비즈하우스 디자인 사진 4">
+      <img class="thumb" src="assets/bizhows_photo_3.png" alt="비즈하우스 디자인 3">
+      <img class="thumb" src="assets/bizhows_photo_4.png" alt="비즈하우스 디자인 4">
+      <img class="thumb" src="assets/bizhows_meal_5.png" alt="비즈하우스 식권 디자인 5">
     </div>
     <details class="detail"><summary>전체 옵션·가격표 펼쳐보기</summary>
       <div class="grp-title">청첩장 본품</div>
@@ -266,7 +270,7 @@
 
   <!-- 바른손카드 -->
   <div class="summary-card" id="bar" style="--accent:#a85d52">
-    <div class="sc-name">바른손카드</div>
+    <div class="sc-name"><a href="https://www.barunsoncard.com/Product/CardList?cate1=청첩장&cate2=전체">바른손카드</a></div>
     <div class="sc-sub">청첩장 1위 · 대중성 & 안정적인 품질</div>
     <hr class="sc-rule">
     <div class="sc-main">
@@ -276,7 +280,7 @@
         <div class="sc-block"><div class="lbl">디자인 방식</div><div class="val">브랜드 디자인 350여 종 + 셀프(직접 디자인·파일 업로드)</div></div>
       </div>
       <div class="sc-photos">
-        <img class="shot" style="height:200px;aspect-ratio:4/3;width:280px;object-fit:cover" src="assets/barunson_photo_1.jpg" alt="바른손 청첩장 예시" style="object-fit:contain;background:#f3e6e1">
+        <img class="shot" style="height:200px;aspect-ratio:4/3;width:280px;object-fit:cover" src="assets/barunson_photo_1.png" alt="바른손 청첩장 예시" style="object-fit:contain;background:#f3e6e1">
       </div>
     </div>
     <div class="perks">
@@ -293,11 +297,16 @@
       </ul></div>
       <div class="sc-cons"><h4>❌ 단점</h4><ul>
         <li>상대적으로 높은 단가</li>
-        <li>-</li>
-        <li>-</li>
+        <li>식권 디자인 30종 </li>
+        <li>모바일 청첩장 옵션 제한적</li>
       </ul></div>
     </div>
-    <div class="sc-gallery"><div class="thumb">상품<br>사진 1</div><div class="thumb">상품<br>사진 2</div><div class="thumb">상품<br>사진 3</div><div class="thumb">상품<br>사진 4</div></div>
+    <div class="sc-gallery">
+      <img class="thumb" src="assets/barunson_photo_2.png" alt="바른손 디자인 사진 2">
+      <img class="thumb" src="assets/barunson_photo_3.png" alt="바른손 디자인 사진 3">
+      <img class="thumb" src="assets/barunson_photo_4.png" alt="바른손 디자인 사진 4">
+      <img class="thumb" src="assets/barunson_meal_5.png" alt="바른손 디자인 사진 5">
+    </div>
     <details class="detail"><summary>전체 옵션·가격표 펼쳐보기</summary>
       <div class="grp-title">청첩장 본품 </div>
       <div class="scroll"><table class="opt">
