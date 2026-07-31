@@ -131,6 +131,16 @@
   #lb-bar{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001}
   #lb-bar button{width:44px;height:44px;border:none;border-radius:10px;background:rgba(255,255,255,.16);color:#fff;font-size:1.3rem;line-height:1;cursor:pointer}
   #lb-bar button:hover{background:rgba(255,255,255,.3)}
+
+  .info-note{margin-top:6px;font-size:.85rem;line-height:1.6}
+  .info-note b{color:var(--rose);font-weight:700;display:inline-block;margin-right:4px}
+  .info-note span{color:var(--ink-soft);font-weight:300}
+  .info-list{margin-top:14px;padding-left:2px}
+  .info-list .info-note{padding-left:0}
+  @media(max-width:560px){
+    .info-note b{display:block;margin-bottom:2px}
+    .info-note span{display:block;padding-left:10px}
+  }
 </style>
 </head>
 <body>
@@ -161,37 +171,37 @@
         <tr>
           <th scope="row"><a class="pick biz" href="#biz">비즈하우스</a></th>
           <td class="num">90원</td>
-          <td class="num">50매~</td>
-          <td class="mini">모청(샬롱드레터)·모바일 감사장·이미지 카드 10set 43%할인 (총 11,900원)</td>
+          <td class="num">50매</td>
+          <td class="mini">모청(샬롱드레터)·모바일 감사장·이미지 카드 10개 43%할인 (총 11,900원)</td>
           <td class="mini">가성비·손쉬운 셀프 디자인</td>
         </tr>
         <tr>
           <th scope="row"><a class="pick bar" href="#bar">바른손카드</a></th>
-          <td class="num">836원~</td>
-          <td class="num">8매~</td>
+          <td class="num">836원</td>
+          <td class="num">8매</td>
           <td class="mini">샘플·모바일·식전영상·아크릴액자</td>
-          <td class="mini">웨딩 전문 브랜드 1위·호불호 없는 정통 클래식</td>
-        </tr>
-        <tr>
-          <th scope="row"><a class="pick der" href="#der">디어디어</a></th>
-          <td class="num">680원~</td>
-          <td class="num">50매~</td>
-          <td class="mini">봉투·스티커·식권·모바일청첩장·웨딩영상2종</td>
-          <td class="mini">바른손의 패밀리 브랜드·컬러풀한색감·감각적인 일러스트</td>
+          <td class="mini">웨딩 전문 브랜드 1위·<br>호불호 없는 정통 클래식</td>
         </tr>
         <tr>
           <th scope="row"><a class="pick boj" href="#boj">보자기카드</a></th>
-          <td class="num">624원~ </span></td>
-          <td class="num">10매~</td>
+          <td class="num">624원</span></td>
+          <td class="num">10매</td>
           <td class="mini">봉투·스티커·모바일·식전영상·식권·웨딩스탬프</td>
           <td class="mini">감성적인 패키징</td>
+        </tr>
+        <tr>
+          <th scope="row"><a class="pick der" href="#der">디어디어</a></th>
+          <td class="num">680원</td>
+          <td class="num">50매</td>
+          <td class="mini">봉투·스티커·식권·모바일청첩장·웨딩영상2종</td>
+          <td class="mini">바른손의 패밀리 브랜드·<br>사진보단 문구·레터링 위주</td>
         </tr>
         <tr>
           <th scope="row"><a class="pick its" href="#its">잇츠카드</a></th>
           <td class="num">624원~</td>
           <td class="num">50매~</td>
           <td class="mini">샘플·모바일·식전영상·봉투·스티커·식권(인쇄수량에 맞춤)</td>
-          <td class="mini">트렌디한 감성 디자인·잦은 할인 이벤트</td>
+          <td class="mini">트렌디한 감성 디자인·<br>잦은 할인 이벤트</td>
         </tr>
       </tbody>
     </table>
@@ -381,10 +391,12 @@
     </div>
     <details class="detail">
       <summary>전체 옵션·가격표</summary>
-      <div><b>기본 선택 옵션: </b> 글씨 색깔 · 영어/한글 · 봉투 · 리본 여부 · 모서리(직각/라운드) · 형태(엽서형/2단)</div>
-      <div><b>10부 이상 무료 혜택: </b> 약도 드로잉 · 봉투 · 실버 스티커 · 모바일 청첩장</div>
-      <div><b>100부 이상 무료 (택 1): </b> 식전영상 · 모바일 웨딩 영상 · 웨딩 스탬프 · 실링 스티커 · 실링 패키지</div>
-      <div><b>제작 소요: </b> 3-5일 (+ 당일 인쇄 초특급 제작 서비스: 24시간 내)</div>
+      <div class="info-list">
+        <div class="info-note"><b>기본 선택 옵션</b><span>글씨 색깔 · 영어/한글 · 봉투 · 리본 여부 · 모서리(직각/라운드) · 형태(엽서형/2단)</span></div>
+        <div class="info-note"><b>10부 이상 무료 혜택</b><span>약도 드로잉 · 봉투 · 실버 스티커 · 모바일 청첩장</span></div>
+        <div class="info-note"><b>100부 이상 무료 (택 1)</b><span>식전영상 · 모바일 웨딩 영상 · 웨딩 스탬프 · 실링 스티커 · 실링 패키지</span></div>
+        <div class="info-note"><b>제작 소요</b><span>3-5일 <span class="sub">(+ 당일 인쇄 초특급 제작 서비스: 24시간 내)</span></span></div>
+      </div>
       <div class="scroll"><table class="opt">
         <thead><tr><th>형태</th><th>1매당(200매 기준)</th><th>최소 수량</th><th>총 가격(200매 기본 옵션 기준)</th><th>비고</th></tr></thead>
         <tbody>
@@ -404,32 +416,53 @@
     </details>
   </div>
 
-  <!-- 레드프린팅 -->
-  <div class="summary-card" id="red" style="--accent:#5a7894">
-    <div class="sc-name">레드프린팅</div>
-    <div class="sc-sub">인쇄 퀄리티 특화 · 소량~대량 인쇄 전문 <span class="warn">(사이트 확인 필요)</span></div>
+  <!-- 디어디어 -->
+  <div class="summary-card" id="der" style="--accent:#5a7894">
+    <div class="sc-name"><a href= "https://deardeer.kr/category/107/order">디어디어</a></div>
+    <div class="sc-sub">형압 디자인 특화 · 심플&유니크 디자</span></div>
     <hr class="sc-rule">
     <div class="sc-main">
       <div>
-        <div class="sc-block"><div class="lbl">가격</div><div class="val warn">확인 필요 <span style="color:var(--ink-soft);font-weight:300">· 단가는 높은 편</span></div></div>
-        <div class="sc-block"><div class="lbl">청첩장 종류</div><div class="val">특수 용지·후가공(박·형압) 강점 <span class="warn">· 종류 확인 필요</span></div></div>
-        <div class="sc-block"><div class="lbl">디자인 방식</div><div class="val">템플릿 편집 + 파일 업로드 (범용 인쇄소) <span class="warn">· 확인 필요</span></div></div>
+        <div class="sc-block"><div class="lbl">가격</div><div class="val warn"><b> 엽서형 (1단) 1매 680원~</b> · 200매 기준 </div></div>
+        <div class="sc-block"><div class="lbl">청첩장 종류</div><div class="val">1/2/3단 (3단 가장 많음) · 카드 사이즈 다양</span></div></div>
+        <div class="sc-block"><div class="lbl">디자인 방식</div><div class="val">템플릿 편집 (글자만)</span></div></div>
       </div>
-      <div class="sc-photos"><div class="shot">사진 1<br>추가</div><div class="shot">사진 2<br>추가</div></div>
+      <div class="sc-photos">
+        <img class="shot" style="height:200px;aspect-ratio:4/3;width:280px;object-fit:cover" src="assets/deardeer_photo_1.jpg" alt="디어디어 청첩장 예시" style="object-fit:contain;background:#f3e6e1">
+      </div>
     </div>
-    <div class="sc-pros"><h4>✅ 장점</h4><ul>
-      <li>인쇄·색감 퀄리티가 가장 낫다는 평</li>
-      <li>1장 소량부터 대량까지 가능</li>
-      <li>용지·후가공 선택지가 풍부</li>
-    </ul></div>
-    <div class="sc-gallery"><div class="thumb">상품<br>사진 1</div><div class="thumb">상품<br>사진 2</div><div class="thumb">상품<br>사진 3</div></div>
-    <details class="detail"><summary>전체 옵션·가격표 (채워넣기)</summary>
+    <div class="perks">
+      <span class="perk">무료 샘플</span><span class="perk">무료 배송</span>
+      <span class="perk">모바일청첩장 무료</span><span class="perk">무료 식권</span>
+      <span class="perk">무료 식전·웨딩인사 영상</span><span class="perk">무료 봉투·스티커</span>
+    </div>
+    <div class="sc-updown">
+      <div class="sc-pros"><h4>✅ 장점</h4><ul>
+        <li>'인스타 감성'의 감각적인 디자인</li>
+        <li>다양한 사이즈 규격 (유니크한 디자인)</li>
+        <li>직관적이고 깔끔한 주문</li>
+      </ul></div>
+      <div class="sc-cons"><h4>❌ 단점</h4><ul>
+        <li>타 브랜드 대비 상대적으로 높은 가격대</li>
+        <li>엽서형 청첩장 종류 제한적 (기본 3단)</li>
+        <li>전반적인 옵션 제한적 (디자인, 봉투, 식권 등)</li>
+      </ul></div>
+    </div>
+    <div class="sc-gallery">
+      <img class="thumb" src="assets/dearder_photo_2.png" alt="디어디어 디자인 사진 2">
+      <img class="thumb" src="assets/dearder_photo_3.png" alt="디어디어 디자인 사진 3">
+      <img class="thumb" src="assets/dearder_photo_4.png" alt="디어디어 디자인 사진 4">
+      <img class="thumb" src="assets/dearder_photo_5.png" alt="디어디어 디자인 사진 5">
+      <img class="thumb" src="assets/dearder_meal_6.png" alt="디어디어 식권 사진 6">
+    </div>
+    <details class="detail"><summary>전체 옵션·가격표</summary>
       <div class="scroll"><table class="opt">
-        <thead><tr><th>옵션</th><th>특징</th><th>1매당</th><th>최소 수량</th><th>총 가격</th><th>비고</th></tr></thead>
+        <thead><tr><th>옵션</th><th>1매당</th><th>최소 수량</th><th>총 가격</th><th>비고</th></tr></thead>
         <tbody>
-          <tr><td class="opt-name">청첩장 (기본)</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td>—</td></tr>
-          <tr><td class="opt-name">봉투 / 스티커</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td>—</td></tr>
-          <tr><td class="opt-name">부가물</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td class="warn">확인 필요</td><td>—</td></tr>
+          <tr><td class="opt-name">1단</td><td>680원~</td><td>50매</td><td>136,000원~</td><td>—</td></tr>
+          <tr><td class="opt-name">2단</td><td>782원~</td><td>50매</td><td>156,400원~</td><td>—</td></tr>
+          <tr><td class="opt-name">3단</td><td>792원~</td><td>50매</td><td>158,400원~</td><td>—</td></tr>
+          <tr><td class="opt-name">식권</td><td>30원~</td><td>100매</td><td>6,000원~</td><td>같은 디자인 작은 사이즈 어린이 식권</td></tr>
         </tbody></table></div>
     </details>
   </div>
